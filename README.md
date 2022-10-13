@@ -12,7 +12,7 @@ To use this container image, mount your ssh keys and your project/playbook direc
 
 ```
 podman run --rm -it -v $HOME/.ansible_ssh:/root/.ssh:Z,ro -v $PWD:/runner/project:Z,ro -w /runner/project localhost/ansible-runtime:1.0.0-ppc64le
-``
+```
 
 Don't use your actual `~/.ssh/` directory if SELinux is in use, as podman will change the context, which will break sshd.
 
@@ -24,5 +24,4 @@ Don't use your actual `~/.ssh/` directory if SELinux is in use, as podman will c
 - `requirements.in`: List of Python modules to be installed
 - `requirements.txt`: Python module constraints file (unused)
 - `requirements.yml`: Ansible Galaxy collections to be installed
-- `azul-inventory-1.0.6.tar.gz`: Ansible inventory collection for EYE
 - `demo-playbook.yml`: Just a demo ;-)
