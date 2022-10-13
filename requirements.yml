@@ -1,0 +1,5 @@
+---
+collections:
+  - ibm.power_aix
+  - ibm.power_hmc
+  - ibm.power_vios

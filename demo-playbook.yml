@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  become: false
+  gather_facts: true
+  tasks:
+    - name: "Facts"
+      debug:
+        msg: "vars: {{ vars }}"
+    - name: "Level 1 test"
+      debug:
+        msg: "Level 1 hello"
+        verbosity: 1
+    - name: "Level 2 test"
+      debug:
+        msg: "Level 2 hello"
+        verbosity: 2
+    - name: "Level 3 test"
+      debug:
+        msg: "Level 3 hello {{ ansible_version }}"
+        verbosity: 3

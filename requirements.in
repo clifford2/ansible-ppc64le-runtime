@@ -1,0 +1,9 @@
+# Used to help dependabot bump the lock file
+ansible-lint
+ansible-compat
+ansible-core==2.13
+molecule
+molecule-podman
+yamllint
+paramiko>=2.11.0  # https://github.com/ansible/creator-ee/issues/140
+ansible-builder
