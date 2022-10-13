@@ -1,0 +1,7 @@
+---
+collections:
+  - ibm.power_aix
+  - ibm.power_hmc
+  - ibm.power_vios
+  - source: /tmp/azul-inventory.tar.gz
+    type: file
