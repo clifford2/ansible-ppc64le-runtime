@@ -37,15 +37,13 @@ COPY requirements.in /tmp/requirements.in
 #COPY requirements.txt /tmp/requirements.txt
 # RUN pip3 install -r /tmp/requirements.in -c /tmp/requirements.txt
 RUN \
+  umask 022 && mkdir -p /runner/{project,artifacts,env,inventory} /usr/share/ansible/collections && \
   pip3 install -r /tmp/requirements.in && \
   rm -rf $(pip3 cache dir)
 # Add some collections
 COPY requirements.yml /tmp/requirements.yml
-ARG AZUL_INVENTORY_VERSION=1.0.6
-COPY azul-inventory-${AZUL_INVENTORY_VERSION}.tar.gz /tmp/azul-inventory.tar.gz
-RUN /usr/local/bin/ansible-galaxy collection install -r /tmp/requirements.yml
+RUN /usr/local/bin/ansible-galaxy collection install -r /tmp/requirements.yml -p /usr/share/ansible/collections && rm -rf /root/.ansible
 # Set working environment
-RUN mkdir -p /runner/{project,artifacts,env,inventory}
 WORKDIR /runner
 # Add some helpful CLI commands to check we do not remove them inadvertently and output some helpful version information at build time.
 RUN set -ex \
