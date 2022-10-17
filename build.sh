@@ -1,4 +1,4 @@
-#!/usr/bin/bash                                                                                                                             
+#!/usr/bin/bash
 # Build container image for running Ansible on ppc64le
 # Default build tool is docker; to use podman, run "export EYE_CONTAINER_RUNTIME=podman" before running this script (untested!)
 
