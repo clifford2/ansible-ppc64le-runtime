@@ -4,5 +4,6 @@ collections:
   - ibm.power_aix
   - ibm.power_hmc
   - ibm.power_vios
+  - community.crypto
   - source: /tmp/azul-inventory.tar.gz
     type: file

@@ -7,7 +7,7 @@ dryrun=0
 debug=0
 verbose=1
 image="ansible-runtime"
-ver="1.0.2"
+ver="1.0.3"
 runtime="${EYE_CONTAINER_RUNTIME:-docker}"
 
 # Do we have jq installed?
