@@ -1,6 +1,7 @@
 ---
 collections:
   - ansible.posix
+  - community.crypto
   - ibm.power_aix
   - ibm.power_hmc
   - ibm.power_vios
